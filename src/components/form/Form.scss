@@ -1,0 +1,19 @@
+.app__form-Paper {
+
+
+    @media screen and (max-width: 450px) {
+        
+    }
+}
+
+.app__form {
+    padding: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-filebase64 {
+    width: 100%;
+}
