@@ -64,6 +64,7 @@ export default function Auth() {
 
         try {
             dispatch({type:AUTH,payload:{result,token}})
+            
             nav("/home")
 
 
@@ -77,7 +78,10 @@ export default function Auth() {
 
     const googleFailure=(error)=>{
         console.log(error)
-        alert ("Google Sign In was unsuccessful. Try Again Later")
+        setTimeout(()=>(
+            alert ("Google Sign In was unsuccessful. Try Again Later")
+        ),3000)
+        
     }
         
     
@@ -93,17 +97,17 @@ export default function Auth() {
                     {
                         isSignup && (
                             <div style={{display:"flex",}}>        
-                                <Input className={`${classes.textfiledItemsAuth}`} name="firstName" label="First Name" handleChange={handleChange} autoFocus xs={6} half  />
-                                <Input className={`${classes.textfiledItemsAuth}`} name="lastName" label="Last Name" handleChange={handleChange}  xs={6} half/>
+                                <Input className="textfiledItemsAuth" name="firstName" label="First Name" handleChange={handleChange} autoFocus xs={6} half  />
+                                <Input className="textfiledItemsAuth" name="lastName" label="Last Name" handleChange={handleChange}  xs={6} half/>
                             </div>
                         )
                     }
-                    <Input className={`${classes.textfiledItemsAuth}`} name="email" label="Email Adress" handleChange={handleChange} type="email" />
-                    <Input className={`${classes.textfiledItemsAuth}`} name="password" label="Password" handleChange={handleChange} type={showPassword?"text":"password"} handleShowPassword={handleShowPassword}/>
+                    <Input className="textfiledItemsAuth" name="email" label="Email Adress" handleChange={handleChange} type="email" />
+                    <Input className="textfiledItemsAuth" name="password" label="Password" handleChange={handleChange} type={showPassword?"text":"password"} handleShowPassword={handleShowPassword}/>
                     {
                         isSignup && (
                             <>        
-                                <Input className={`${classes.textfiledItemsAuth}`} name="confirmPassword" label="Repeat Password" handleChange={handleChange} type={showPassword?"text":"password"} handleShowPassword={handleShowPassword}/>
+                                <Input className="textfiledItemsAuth" name="confirmPassword" label="Repeat Password" handleChange={handleChange} type={showPassword?"text":"password"} handleShowPassword={handleShowPassword}/>
                             </>
                         )
                     }
