@@ -13,7 +13,6 @@ export default function PostDetails() {
   const classes= useStyles();
   const {post,loading,error} = useSelector((state)=>state.postDetails);
   const {posts} = useSelector((state)=>state.postsLists);
-  console.log("post",post)
   const dispatch=useDispatch()
   const nav= useNavigate()
   const {id}=useParams()
